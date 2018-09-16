@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: co.udea.regact.api.CursoServiceImpTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.192 sec <<< FAILURE! - in co.udea.regact.api.CursoServiceImpTest
+debeRetornoUnCursoPorSuCodigoExistosamente(co.udea.regact.api.CursoServiceImpTest)  Time elapsed: 0.254 sec  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:135)
+	at co.udea.regact.api.CursoServiceImpTest.debeRetornoUnCursoPorSuCodigoExistosamente(CursoServiceImpTest.java:48)
+
