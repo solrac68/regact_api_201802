@@ -1,0 +1,11 @@
+co\udea\regact\api\config\CORSFilter.class
+co\udea\regact\api\repository\CursoRepository.class
+co\udea\regact\api\exception\GeneralException.class
+co\udea\regact\api\RegistroActividadesApiApplication.class
+co\udea\regact\api\service\impl\CursoServiceImpl.class
+co\udea\regact\api\util\Messages.class
+co\udea\regact\api\controller\CursoController.class
+co\udea\regact\api\config\SwaggerConfig.class
+co\udea\regact\api\exception\DataNotFoundException.class
+co\udea\regact\api\domain\Curso.class
+co\udea\regact\api\service\CursoService.class
