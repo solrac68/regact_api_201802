@@ -14527,3 +14527,380 @@ Verify the connector's configuration, identify and stop any process that's liste
 2018-09-15 19:24:11.390  INFO 1152 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
 2018-09-15 19:24:11.390  INFO 1152 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2018-09-15 19:24:11.390  INFO 1152 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:12:55.908  INFO 19692 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on DESKTOP-17LVB4T with PID 19692 (D:\Proyectos\regact_api_201802\target\classes started by 71701882 in D:\Proyectos\regact_api_201802)
+2018-09-29 17:12:55.928  INFO 19692 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-09-29 17:12:56.147  INFO 19692 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:12:56 COT 2018]; root of context hierarchy
+2018-09-29 17:12:59.138  INFO 19692 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-29 17:12:59.324  INFO 19692 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7361b390] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-29 17:13:00.271  INFO 19692 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-09-29 17:13:00.291  INFO 19692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-29 17:13:00.293  INFO 19692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-29 17:13:00.520  INFO 19692 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-09-29 17:13:00.520  INFO 19692 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4375 ms
+2018-09-29 17:13:00.728  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-29 17:13:00.731  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-29 17:13:00.732  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-29 17:13:00.732  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-29 17:13:00.732  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-29 17:13:00.732  INFO 19692 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-09-29 17:13:07.912  INFO 19692 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:13:07.966  INFO 19692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-29 17:13:08.303  INFO 19692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-29 17:13:08.306  INFO 19692 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-29 17:13:08.309  INFO 19692 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-09-29 17:13:08.422  INFO 19692 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-29 17:13:08.661  INFO 19692 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-29 17:13:33.434  INFO 19692 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-29 17:13:33.454  INFO 19692 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@34be065a
+2018-09-29 17:13:33.897  WARN 19692 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on co.udea.regact.api.domain.Grupo.docente references an unknown entity: co.udea.regact.api.domain.Docente
+2018-09-29 17:13:33.905  INFO 19692 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-09-29 17:13:33.941  INFO 19692 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-09-29 17:13:33.981 ERROR 19692 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on co.udea.regact.api.domain.Grupo.docente references an unknown entity: co.udea.regact.api.domain.Docente
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at co.udea.regact.api.RegistroActividadesApiApplication.main(RegistroActividadesApiApplication.java:9) [classes/:na]
+Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on co.udea.regact.api.domain.Grupo.docente references an unknown entity: co.udea.regact.api.domain.Docente
+	at org.hibernate.cfg.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:97) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1786) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1730) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1617) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:370) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:359) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+
+2018-09-29 17:19:58.217  INFO 11436 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on DESKTOP-17LVB4T with PID 11436 (D:\Proyectos\regact_api_201802\target\classes started by 71701882 in D:\Proyectos\regact_api_201802)
+2018-09-29 17:19:58.220  INFO 11436 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-09-29 17:19:58.261  INFO 11436 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:19:58 COT 2018]; root of context hierarchy
+2018-09-29 17:19:59.537  INFO 11436 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-29 17:19:59.673  INFO 11436 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7361b390] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-29 17:20:00.034  INFO 11436 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-09-29 17:20:00.042  INFO 11436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-29 17:20:00.043  INFO 11436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-29 17:20:00.221  INFO 11436 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-09-29 17:20:00.221  INFO 11436 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1963 ms
+2018-09-29 17:20:00.419  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-29 17:20:00.422  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-29 17:20:00.424  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-29 17:20:00.424  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-29 17:20:00.424  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-29 17:20:00.424  INFO 11436 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-09-29 17:20:06.881  INFO 11436 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:20:06.892  INFO 11436 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-29 17:20:06.939  INFO 11436 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-29 17:20:06.941  INFO 11436 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-29 17:20:06.943  INFO 11436 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-09-29 17:20:06.973  INFO 11436 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-29 17:20:07.088  INFO 11436 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-29 17:20:30.706  INFO 11436 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-29 17:20:30.717  INFO 11436 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@106b014e
+2018-09-29 17:20:30.983  WARN 11436 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:20:30.985  WARN 11436 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:20:30.986  WARN 11436 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:20:30.986  WARN 11436 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:20:30.986  WARN 11436 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:20:31.134  WARN 11436 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+2018-09-29 17:20:31.139  INFO 11436 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-09-29 17:20:31.154  INFO 11436 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-09-29 17:20:31.162 ERROR 11436 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at co.udea.regact.api.RegistroActividadesApiApplication.main(RegistroActividadesApiApplication.java:9) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:954) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:882) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:370) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:359) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: co.udea.regact.api.domain.Curso column: cur_estado (should be mapped with insert="false" update="false")
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:830) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:848) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:870) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:605) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:265) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:329) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:443) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:879) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	... 22 common frames omitted
+
+2018-09-29 17:23:51.851  INFO 14744 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on DESKTOP-17LVB4T with PID 14744 (D:\Proyectos\regact_api_201802\target\classes started by 71701882 in D:\Proyectos\regact_api_201802)
+2018-09-29 17:23:51.854  INFO 14744 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-09-29 17:23:51.887  INFO 14744 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:23:51 COT 2018]; root of context hierarchy
+2018-09-29 17:23:52.940  INFO 14744 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-29 17:23:53.033  INFO 14744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$95ee0218] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-29 17:23:53.314  INFO 14744 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-09-29 17:23:53.320  INFO 14744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-29 17:23:53.321  INFO 14744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-29 17:23:53.462  INFO 14744 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-09-29 17:23:53.463  INFO 14744 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1578 ms
+2018-09-29 17:23:53.640  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-29 17:23:53.643  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-29 17:23:53.644  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-29 17:23:53.644  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-29 17:23:53.645  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-29 17:23:53.645  INFO 14744 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-09-29 17:24:00.150  INFO 14744 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:24:00.161  INFO 14744 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-29 17:24:00.229  INFO 14744 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-29 17:24:00.230  INFO 14744 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-29 17:24:00.232  INFO 14744 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-09-29 17:24:00.279  INFO 14744 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-29 17:24:00.394  INFO 14744 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-29 17:24:24.170  INFO 14744 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-29 17:24:24.178  INFO 14744 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7c369270
+2018-09-29 17:24:24.502  WARN 14744 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:24:24.504  WARN 14744 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:24:24.505  WARN 14744 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:24:24.506  WARN 14744 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:24:24.506  WARN 14744 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:24:25.059  INFO 14744 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-09-29 17:24:25.389  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: cursos
+2018-09-29 17:24:25.469  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: cursos
+2018-09-29 17:24:25.635  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: docentes
+2018-09-29 17:24:25.713  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: docentes
+2018-09-29 17:24:25.871  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: grupos
+2018-09-29 17:24:25.947  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: grupos
+2018-09-29 17:24:26.104  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: perfiles
+2018-09-29 17:24:26.182  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: perfiles
+2018-09-29 17:24:26.344  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: rel_perfil_usuario
+2018-09-29 17:24:26.423  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: rel_perfil_usuario
+2018-09-29 17:24:26.577  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: rel_usuario_curso_grupo
+2018-09-29 17:24:26.652  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: rel_usuario_curso_grupo
+2018-09-29 17:24:26.813  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestres
+2018-09-29 17:24:26.896  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestres
+2018-09-29 17:24:27.074  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: usuarios
+2018-09-29 17:24:27.153  INFO 14744 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: usuarios
+2018-09-29 17:24:29.694  INFO 14744 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:24:30.994  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorNombreUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:24:30.996  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorIdUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:24:30.997  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/grupos/getGruposByDocente],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.GrupoDto> co.udea.regact.api.controller.GrupoController.getGruposByDocente(java.lang.String)
+2018-09-29 17:24:30.998  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorId]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:24:31.000  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorNombre]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:24:31.000  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/listar]}" onto public java.util.List<co.udea.regact.api.domain.Usuario> co.udea.regact.api.controller.UsuarioController.geUsuarios()
+2018-09-29 17:24:31.002  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-09-29 17:24:31.003  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-09-29 17:24:31.004  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-09-29 17:24:31.006  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-29 17:24:31.006  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-29 17:24:31.168  INFO 14744 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-09-29 17:24:31.539  INFO 14744 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:23:51 COT 2018]; root of context hierarchy
+2018-09-29 17:24:31.647  INFO 14744 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:24:31.647  INFO 14744 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:24:31.697  INFO 14744 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:24:32.005  INFO 14744 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-29 17:24:32.027  INFO 14744 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-09-29 17:24:32.027  INFO 14744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-09-29 17:24:32.148  INFO 14744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-09-29 17:24:32.207  INFO 14744 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-09-29 17:24:32.449  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCursosPorUsuarioUsingGET_1
+2018-09-29 17:24:32.489  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingGET_1
+2018-09-29 17:24:32.491  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingHEAD_1
+2018-09-29 17:24:32.494  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPOST_1
+2018-09-29 17:24:32.496  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPUT_1
+2018-09-29 17:24:32.498  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPATCH_1
+2018-09-29 17:24:32.500  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingDELETE_1
+2018-09-29 17:24:32.502  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingOPTIONS_1
+2018-09-29 17:24:32.504  INFO 14744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingTRACE_1
+2018-09-29 17:24:32.584 ERROR 14744 --- [main] o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-8080"]
+
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_162]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_162]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_162]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_162]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_162]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:990) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:635) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1022) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:250) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:193) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at co.udea.regact.api.RegistroActividadesApiApplication.main(RegistroActividadesApiApplication.java:9) [classes/:na]
+
+2018-09-29 17:24:32.585 ERROR 14744 --- [main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:250) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:193) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at co.udea.regact.api.RegistroActividadesApiApplication.main(RegistroActividadesApiApplication.java:9) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1031) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_162]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_162]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_162]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_162]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_162]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:990) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:635) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1022) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	... 14 common frames omitted
+
+2018-09-29 17:24:32.592  INFO 14744 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-09-29 17:24:32.602  INFO 14744 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-09-29 17:24:32.607 ERROR 14744 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-09-29 17:24:32.608  INFO 14744 --- [main] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:23:51 COT 2018]; root of context hierarchy
+2018-09-29 17:24:32.610  INFO 14744 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-09-29 17:24:32.611  INFO 14744 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-29 17:24:32.613  INFO 14744 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:33:24.544  INFO 19284 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on DESKTOP-17LVB4T with PID 19284 (D:\Proyectos\regact_api_201802\target\classes started by 71701882 in D:\Proyectos\regact_api_201802)
+2018-09-29 17:33:24.547  INFO 19284 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-09-29 17:33:24.583  INFO 19284 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:33:24 COT 2018]; root of context hierarchy
+2018-09-29 17:33:25.650  INFO 19284 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-09-29 17:33:25.734  INFO 19284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9f03a6c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-29 17:33:26.052  INFO 19284 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-09-29 17:33:26.059  INFO 19284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-29 17:33:26.059  INFO 19284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-09-29 17:33:26.206  INFO 19284 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-09-29 17:33:26.206  INFO 19284 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1627 ms
+2018-09-29 17:33:26.379  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-29 17:33:26.383  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-29 17:33:26.384  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-29 17:33:26.384  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-29 17:33:26.384  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-29 17:33:26.385  INFO 19284 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-09-29 17:33:32.764  INFO 19284 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:33:32.775  INFO 19284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-29 17:33:32.825  INFO 19284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-09-29 17:33:32.826  INFO 19284 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-29 17:33:32.828  INFO 19284 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-09-29 17:33:32.868  INFO 19284 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-29 17:33:32.976  INFO 19284 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-09-29 17:33:58.019  INFO 19284 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-09-29 17:33:58.024  INFO 19284 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@f0a66bd
+2018-09-29 17:33:58.305  WARN 19284 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:33:58.308  WARN 19284 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:33:58.308  WARN 19284 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:33:58.308  WARN 19284 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:33:58.308  WARN 19284 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-09-29 17:33:58.588  INFO 19284 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-09-29 17:34:05.951  INFO 19284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-29 17:34:06.469  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorNombreUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:34:06.469  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorIdUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:34:06.470  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/grupos/getGruposByDocente],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.GrupoDto> co.udea.regact.api.controller.GrupoController.getGruposByDocente(java.lang.String)
+2018-09-29 17:34:06.471  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorId]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:34:06.471  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorNombre]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-09-29 17:34:06.472  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/listar]}" onto public java.util.List<co.udea.regact.api.domain.Usuario> co.udea.regact.api.controller.UsuarioController.geUsuarios()
+2018-09-29 17:34:06.475  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-09-29 17:34:06.476  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-09-29 17:34:06.477  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-09-29 17:34:06.479  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-29 17:34:06.479  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-29 17:34:06.595  INFO 19284 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-09-29 17:34:06.822  INFO 19284 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Sat Sep 29 17:33:24 COT 2018]; root of context hierarchy
+2018-09-29 17:34:06.884  INFO 19284 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:34:06.884  INFO 19284 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:34:06.913  INFO 19284 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-29 17:34:07.115  INFO 19284 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-29 17:34:07.124  INFO 19284 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-09-29 17:34:07.125  INFO 19284 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-09-29 17:34:07.139  INFO 19284 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-09-29 17:34:07.171  INFO 19284 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-09-29 17:34:07.381  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCursosPorUsuarioUsingGET_1
+2018-09-29 17:34:07.467  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingGET_1
+2018-09-29 17:34:07.470  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingHEAD_1
+2018-09-29 17:34:07.474  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPOST_1
+2018-09-29 17:34:07.477  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPUT_1
+2018-09-29 17:34:07.479  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPATCH_1
+2018-09-29 17:34:07.482  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingDELETE_1
+2018-09-29 17:34:07.485  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingOPTIONS_1
+2018-09-29 17:34:07.487  INFO 19284 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingTRACE_1
+2018-09-29 17:34:07.614  INFO 19284 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-09-29 17:34:07.620  INFO 19284 --- [main] .u.r.a.RegistroActividadesApiApplication : Started RegistroActividadesApiApplication in 43.358 seconds (JVM running for 44.193)
+2018-09-29 18:30:26.817  INFO 19284 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-29 18:30:26.819  INFO 19284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-29 18:30:26.861  INFO 19284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 42 ms

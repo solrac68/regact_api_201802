@@ -1,18 +1,14 @@
 package co.udea.regact.api.domain;
 
-import java.util.Date;
+
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,8 +28,8 @@ public class Curso {
 	@Column(name = "cur_nombre")
 	private String nombre;
 	
-	@Column(name = "cur_estado")
-	private Integer cantidadHoras;
+	@Column(name = "cur_horas")
+	private Integer horas;
 	
 	@Column(name = "cur_estado")
 	private Boolean estado;
@@ -46,9 +42,9 @@ public class Curso {
 		
 	}
 	
-	public Curso(String nombre, Integer cantidadHoras,Boolean estado ) {
+	public Curso(String nombre, Integer horas,Boolean estado ) {
 		this.nombre = nombre;
-		this.cantidadHoras = cantidadHoras;
+		this.horas = horas;
 		this.estado = estado;
 	}
 	
@@ -77,12 +73,12 @@ public class Curso {
 	}
 
 	
-	public int getCantidadHoras() {
-		return cantidadHoras;
+	public int getHoras() {
+		return horas;
 	}
 
-	public void setCantidadHoras(int cantidadHoras) {
-		this.cantidadHoras = cantidadHoras;
+	public void setHoras(int cantidadHoras) {
+		this.horas = cantidadHoras;
 	}
 
 	
