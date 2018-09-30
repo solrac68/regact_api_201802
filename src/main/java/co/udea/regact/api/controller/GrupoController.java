@@ -17,7 +17,7 @@ import co.udea.regact.api.util.Messages;
 @RequestMapping("/grupos")
 public class GrupoController {
 	
-	private static Logger log = LoggerFactory.getLogger(CursoController.class);
+	private static Logger log = LoggerFactory.getLogger(GrupoController.class);
 	
 	@Autowired
     private Messages messages;
