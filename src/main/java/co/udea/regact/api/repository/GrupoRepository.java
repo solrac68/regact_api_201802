@@ -6,5 +6,6 @@ import co.udea.regact.api.domain.Grupo;
 
 public interface GrupoRepository extends JpaRepository<Grupo, Integer> {
 	public Optional<Grupo> findById(Integer id);
-
+	@SuppressWarnings("unchecked")
+	public Grupo saveAndFlush(Grupo grupo);
 }

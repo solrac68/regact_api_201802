@@ -64,4 +64,10 @@ public class GrupoServiceImp implements GrupoService {
 		
 	}
 
+	@Override
+	public Grupo saveGrupo(Grupo grupo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

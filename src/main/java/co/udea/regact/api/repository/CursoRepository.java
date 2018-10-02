@@ -6,4 +6,6 @@ import co.udea.regact.api.domain.Curso;
 
 public interface CursoRepository extends JpaRepository<Curso, Integer>{
 	public Optional<Curso> findByid(Integer id);
+	@SuppressWarnings("unchecked")
+	public Curso saveAndFlush(Curso curso);
 }
