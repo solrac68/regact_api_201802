@@ -20,5 +20,5 @@ spring:
     username: uvsgpvxmuoozbc
     password: 46ba8079f7cfecc4ca802204eb460dba3199f6e8af4bf515eaa94f908a10e07f
     hikari:
-      maximum-pool-size: 120
-      connection-init-sql: 120
+      maximum-pool-size: 100000
+      idle-timeout: 5

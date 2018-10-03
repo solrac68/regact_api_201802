@@ -21,12 +21,14 @@ public class CursoServiceImp implements CursoService {
 
 	@Override
 	public Curso getCurso(Integer id) {
-		Curso curso = null;
-		Optional<Curso> cursoO = this.cursoRepository.findByid(id);
-		if(cursoO.isPresent()) {
-			curso = cursoO.get();
-		}
-		return curso;
+		return this.cursoRepository.findOne(id);
+		
+//		Curso curso = null;
+//		Optional<Curso> cursoO = this.cursoRepository.findOne(id);
+//		if(cursoO.isPresent()) {
+//			curso = cursoO.get();
+//		}
+//		return curso;
 	}
 
 	@Override
