@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -32,44 +33,78 @@ import org.junit.Before;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
+import co.udea.regact.api.controller.CursoController;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.hamcrest.Matchers.containsString;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+
+//@WebMvcTest(CursoController.class)
+//@ContextConfiguration(classes = {Curso.class,CursoRepository.class,CursoService.class})
+//@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@WebMvcTest(CursoController.class)
 @RunWith(SpringRunner.class)
-@WebMvcTest(CursoController.class)
-@ContextConfiguration(classes = {Curso.class,CursoRepository.class,CursoService.class,CursoServiceImp.class})
+@SpringBootTest(
+        classes = CursoControllerTest.class
+)
 public class CursoControllerTest {
 	
-	private CursoServiceImp cursoServiceMock;
-	
 	@Autowired
+    private WebApplicationContext wac;
+	
 	private MockMvc mockMvc;
 	
-	@Mock
-	private Curso cursoMock;
+//	@Autowired
+//	private CursoController controller;
 	
-	@Mock
-	private CursoRepository cursoRepository;
+
+//	
+//	@Autowired
+//	private MockMvc mockMvc;
+//	
+//	@MockBean
+//	private CursoServiceImp service;
 	
-	@Autowired
-    ObjectMapper objectMapper;
+//	
+//	@Mock
+//	private Curso cursoMock;
+//	
+//	@Mock
+//	private CursoRepository cursoRepository;
+//	
+//	@Autowired
+//    ObjectMapper objectMapper;
 	
 	@Before
     public void setupMock() {
-		MockitoAnnotations.initMocks(this);
-		cursoServiceMock = new CursoServiceImp(cursoRepository);
+//		MockitoAnnotations.initMocks(this);
+//		cursoServiceMock = new CursoServiceImp(cursoRepository);
+		
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 	}
 	
-
+	
 	@Test
-	public void testCreateCursoExitosamente() throws Exception
-	{
-		
-		when(cursoServiceMock.saveCurso(cursoMock)).thenReturn(cursoMock);
-		
-		mockMvc.perform(post("/setCurso")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapper.writeValueAsBytes(cursoServiceMock)))
-				.andExpect(status().isCreated());
-		
-	}
+    public void contexLoads() throws Exception {
+		//when(service.getCurso(1)).thenReturn(new Curso("Matematicas Discretas 1", 98, true));
+        this.mockMvc.perform(get("getCurso?id=1")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("Matematicas Discretas 1")));
+    }
+
+//	@Test
+//	public void testCreateCursoExitosamente() throws Exception
+//	{
+//		
+//		when(cursoServiceMock.saveCurso(cursoMock)).thenReturn(cursoMock);
+//		
+//		mockMvc.perform(post("/setCurso")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content(objectMapper.writeValueAsBytes(cursoServiceMock)))
+//				.andExpect(status().isCreated());
+//		
+//	}
 
 }

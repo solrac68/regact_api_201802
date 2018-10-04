@@ -14,6 +14,7 @@ import co.udea.regact.api.domain.Grupo;
 import co.udea.regact.api.domain.Semestre;
 import co.udea.regact.api.dto.GrupoDto;
 import co.udea.regact.api.repository.DocenteRepository;
+import co.udea.regact.api.repository.GrupoRepository;
 import co.udea.regact.api.service.GrupoService;
 
 @Service
@@ -21,9 +22,12 @@ import co.udea.regact.api.service.GrupoService;
 public class GrupoServiceImp implements GrupoService {
 	
 	private DocenteRepository docenteRepository;
+	private GrupoRepository grupoRepository;
 	
-	public GrupoServiceImp(DocenteRepository docenteRepository) {
+	
+	public GrupoServiceImp(DocenteRepository docenteRepository,GrupoRepository grupoRepository) {
 		this.docenteRepository = docenteRepository;
+		this.grupoRepository = grupoRepository;
 	}
 
 	@Override
@@ -32,9 +36,12 @@ public class GrupoServiceImp implements GrupoService {
 		Semestre semestre;
 		Curso curso;
 		List<GrupoDto> gruposDto = new ArrayList<>();
-		Optional<Docente> docente  = this.docenteRepository.findByEmail(emailDocente);
-		if(docente.isPresent()) {
-			Set<Grupo> grupos =  docente.get().getGrupos();
+		//Optional<Docente> docente  = this.docenteRepository.findByEmail(emailDocente);
+		Docente docente = this.docenteRepository.findOne(emailDocente);
+		
+		if(docente != null) {
+			//Set<Grupo> grupos =  docente.get().getGrupos();
+			Set<Grupo> grupos =  docente.getGrupos();
 			for(Grupo grupo : grupos) {
 				semestre = grupo.getSemestre();
 				curso = grupo.getCurso();
@@ -67,7 +74,7 @@ public class GrupoServiceImp implements GrupoService {
 	@Override
 	public Grupo saveGrupo(Grupo grupo) {
 		// TODO Auto-generated method stub
-		return null;
+		return grupoRepository.saveAndFlush(grupo);
 	}
 
 }
