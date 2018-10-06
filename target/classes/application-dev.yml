@@ -13,6 +13,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         
+        
       
   datasource:  
     url: jdbc:postgresql://ec2-107-20-173-71.compute-1.amazonaws.com:5432/d14avm9e5uct4f?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
