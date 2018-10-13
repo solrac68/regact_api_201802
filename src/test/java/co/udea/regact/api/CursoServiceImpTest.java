@@ -16,10 +16,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 
-import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.github.springtestdbunit.annotation.DatabaseOperation;
-import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.github.springtestdbunit.annotation.DatabaseTearDown;
+//import com.github.springtestdbunit.DbUnitTestExecutionListener;
+//import com.github.springtestdbunit.annotation.DatabaseOperation;
+//import com.github.springtestdbunit.annotation.DatabaseSetup;
+//import com.github.springtestdbunit.annotation.DatabaseTearDown;
 
 import co.udea.regact.api.domain.Curso;
 import co.udea.regact.api.exception.DataNotFoundException;
@@ -29,11 +29,11 @@ import co.udea.regact.api.service.CursoService;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = RegistroActividadesApiApplication.class)
 @ActiveProfiles(profiles = { "test" })
-@DatabaseSetup(value = "/datasets/base-cursos.xml")
-@DatabaseTearDown(value = "/datasets/base-cursos.xml", type = DatabaseOperation.DELETE)
-@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
-    TransactionalTestExecutionListener.class,
-    DbUnitTestExecutionListener.class})
+//@DatabaseSetup(value = "/datasets/base-cursos.xml")
+//@DatabaseTearDown(value = "/datasets/base-cursos.xml", type = DatabaseOperation.DELETE)
+//@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
+//    TransactionalTestExecutionListener.class,
+//    DbUnitTestExecutionListener.class})
 public class CursoServiceImpTest {
 	
 	@Inject

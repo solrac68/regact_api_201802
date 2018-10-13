@@ -16,10 +16,10 @@ spring:
         
       
   datasource:  
-    url: jdbc:postgresql://ec2-107-20-173-71.compute-1.amazonaws.com:5432/d14avm9e5uct4f?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
+    url: jdbc:postgresql://localhost:5432/Registro
     driver-class-name: org.postgresql.Driver
-    username: uvsgpvxmuoozbc
-    password: 46ba8079f7cfecc4ca802204eb460dba3199f6e8af4bf515eaa94f908a10e07f
+    username: postgres
+    password: sa
     hikari:
       maximum-pool-size: 100000
       idle-timeout: 5
