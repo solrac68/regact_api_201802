@@ -3,7 +3,6 @@ package co.udea.regact.api.test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -18,8 +17,8 @@ import co.udea.regact.api.repository.DocenteRepository;
 import co.udea.regact.api.repository.GrupoRepository;
 import co.udea.regact.api.service.impl.GrupoServiceImp;
 
+import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 public class GrupoServiceImpTest {
 	
@@ -37,9 +36,17 @@ public class GrupoServiceImpTest {
 	@Mock
 	private Docente docenteMock;
 	
+	@Mock
+	private Grupo grupo1Mock, grupo2Mock, grupo3Mock;
+	
+	private List<Grupo> gruposMock;
+	
 	@Before
     public void setupMock() {
 		MockitoAnnotations.initMocks(this);
+		
+		gruposMock = Arrays.asList(grupo1Mock,grupo2Mock,grupo3Mock);
+		
 		grupoServiceImp = new GrupoServiceImp(docenteRepository,grupoRepository);
 	}
 	
@@ -47,16 +54,24 @@ public class GrupoServiceImpTest {
 
 	@Test
 	public void testGetGruposByDocente() {
-		when(docenteRepository.findOne("andres@gmail.com")).thenReturn(docenteMock);
+		when(docenteRepository.findOne(71701882)).thenReturn(docenteMock);
 		
-		List<GrupoDto> grupos = grupoServiceImp.getGruposByDocente("andres@gmail.com");
+		List<GrupoDto> grupos = grupoServiceImp.getGruposByDocente(71701882);
 		
 		assertThat(docenteMock.getGrupos().size(), is(equalTo(grupos.size())));
 	}
+	
+	@Test
+	public void testGetGruposActivosByDocente() {
+		when(grupoRepository.findByEstadoActivo(71701882)).thenReturn(gruposMock);
+		
+		List<GrupoDto> gruposActivos = grupoServiceImp.getGruposActivosByDocente(71701882);
+		
+		assertThat(gruposMock.size(), is(equalTo(gruposActivos.size())));
+	}
+	
+	
 
-//	@Test
-//	public void testSaveGrupo() {
-//		fail("Not yet implemented");
-//	}
+
 
 }

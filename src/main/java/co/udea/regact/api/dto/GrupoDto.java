@@ -2,9 +2,6 @@ package co.udea.regact.api.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 public class GrupoDto {
 	private Integer id;
@@ -15,12 +12,41 @@ public class GrupoDto {
 	private Date horafinclase;
 	private Date fechaInicio;
 	private Date fechaFin;
-	private Boolean estadoCurso;
+	private Boolean estadoGrupo;
 	private String nombreCurso;
 	private Integer anoSemestre;
 	private Boolean estadoSemestre;
 	private Boolean semestre;
 	private String correoDocente;
+	private Integer idDocente;
+	
+	
+
+	public GrupoDto() {
+		
+	}
+	
+	public GrupoDto(Integer id, String nombre, int cantidadestudiantes, String diaclase, Date horainiclase,
+			Date horafinclase, Date fechaInicio, Date fechaFin, Boolean estadoGrupo, String nombreCurso,
+			Integer anoSemestre, Boolean estadoSemestre, Boolean semestre, String correoDocente,Integer idDocente) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.cantidadestudiantes = cantidadestudiantes;
+		this.diaclase = diaclase;
+		this.horainiclase = horainiclase;
+		this.horafinclase = horafinclase;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.estadoGrupo = estadoGrupo;
+		this.nombreCurso = nombreCurso;
+		this.anoSemestre = anoSemestre;
+		this.estadoSemestre = estadoSemestre;
+		this.semestre = semestre;
+		this.correoDocente = correoDocente;
+		this.idDocente = idDocente;
+	}
+	
 	
 	public Integer getId() {
 		return id;
@@ -58,11 +84,11 @@ public class GrupoDto {
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
-	public Boolean getEstadoCurso() {
-		return estadoCurso;
+	public Boolean getEstadoGrupo() {
+		return estadoGrupo;
 	}
-	public void setEstadoCurso(Boolean estadoCurso) {
-		this.estadoCurso = estadoCurso;
+	public void setEstadoGrupo(Boolean estadoGrupo) {
+		this.estadoGrupo = estadoGrupo;
 	}
 	public String getNombreCurso() {
 		return nombreCurso;
@@ -105,5 +131,11 @@ public class GrupoDto {
 	}
 	public void setHorafinclase(Date horafinclase) {
 		this.horafinclase = horafinclase;
+	}
+	public Integer getIdDocente() {
+		return idDocente;
+	}
+	public void setIdDocente(Integer idDocente) {
+		this.idDocente = idDocente;
 	}
 }

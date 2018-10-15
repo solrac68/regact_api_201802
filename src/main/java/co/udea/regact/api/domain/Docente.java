@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 @Table(name = "DOCENTES")
 public class Docente {
+	
 	@Id
+	@Column(name = "doce_id")
+	private Integer id;
+
 	@Column(name = "doce_email")
 	private String email;
 	
@@ -27,6 +31,14 @@ public class Docente {
 	@OneToMany(mappedBy = "docente", cascade = CascadeType.ALL)
 	@JsonBackReference
 	private Set<Grupo> grupos;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;

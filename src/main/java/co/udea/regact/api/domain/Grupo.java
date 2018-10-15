@@ -59,7 +59,7 @@ public class Grupo {
 	private Semestre semestre;
 	
 	@ManyToOne
-	@JoinColumn(name = "gru_doce_email")
+	@JoinColumn(name = "gru_doce_id")
 	private Docente docente;
 
 	public Integer getId() {

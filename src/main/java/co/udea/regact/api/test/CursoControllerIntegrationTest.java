@@ -33,7 +33,7 @@ public class CursoControllerIntegrationTest {
 		
 		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 		
-		//assertEquals("Matematicas Discretas", curso.getNombre());
+		assertEquals("Matematicas Discretas", curso.getNombre());
 		//assertNull(curso);
 	}
 	

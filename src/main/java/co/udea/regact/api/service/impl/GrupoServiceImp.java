@@ -5,17 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
-import java.util.Set;
-
-import co.udea.regact.api.domain.Curso;
 import co.udea.regact.api.domain.Docente;
 import co.udea.regact.api.domain.Grupo;
-import co.udea.regact.api.domain.Semestre;
 import co.udea.regact.api.dto.GrupoDto;
 import co.udea.regact.api.repository.DocenteRepository;
 import co.udea.regact.api.repository.GrupoRepository;
 import co.udea.regact.api.service.GrupoService;
+import co.udea.regact.api.util.Mapper;
 
 @Service
 @Qualifier("GrupoServiceImpl")
@@ -31,40 +27,15 @@ public class GrupoServiceImp implements GrupoService {
 	}
 
 	@Override
-	public List<GrupoDto> getGruposByDocente(String emailDocente) {
-		GrupoDto grupoDto;
-		Semestre semestre;
-		Curso curso;
-		List<GrupoDto> gruposDto = new ArrayList<>();
+	public List<GrupoDto> getGruposByDocente(Integer id) {
+		List<GrupoDto> gruposDto = null;
 		//Optional<Docente> docente  = this.docenteRepository.findByEmail(emailDocente);
-		Docente docente = this.docenteRepository.findOne(emailDocente);
+		Docente docente = this.docenteRepository.findOne(id);
 		
 		if(docente != null) {
-			//Set<Grupo> grupos =  docente.get().getGrupos();
-			Set<Grupo> grupos =  docente.getGrupos();
-			for(Grupo grupo : grupos) {
-				semestre = grupo.getSemestre();
-				curso = grupo.getCurso();
-				grupoDto = new GrupoDto();
-				
-				grupoDto.setCorreoDocente(emailDocente);
-				grupoDto.setSemestre(semestre.getSemestre());
-				grupoDto.setEstadoSemestre(semestre.getEstado());
-				grupoDto.setAnoSemestre(semestre.getAno());
-				grupoDto.setNombreCurso(curso.getNombre());
-				grupoDto.setEstadoCurso(curso.getEstado());
-				grupoDto.setFechaFin(grupo.getFechaFin());
-				grupoDto.setFechaInicio(grupo.getFechaInicio());
-				grupoDto.setHorainiclase(grupo.getHorainiclase());
-				grupoDto.setHorafinclase(grupo.getHorafinclase());
-				grupoDto.setDiaclase(grupo.getDiaclase());
-				grupoDto.setCantidadestudiantes(grupo.getCantidadestudiantes());
-				grupoDto.setNombre(grupo.getNombre());
-				grupoDto.setId(grupo.getId());
-				
-				gruposDto.add(grupoDto);
-
-			}
+			List<Grupo> grupos = new ArrayList<Grupo>();
+			grupos.addAll(docente.getGrupos());
+			gruposDto = Mapper.Map(grupos);
 		}
 		
 		return gruposDto;	
@@ -75,6 +46,19 @@ public class GrupoServiceImp implements GrupoService {
 	public Grupo saveGrupo(Grupo grupo) {
 		// TODO Auto-generated method stub
 		return grupoRepository.saveAndFlush(grupo);
+	}
+
+	@Override
+	public List<GrupoDto> getGruposActivosByDocente(Integer id) {
+		List<GrupoDto> gruposDto = null;
+		
+		List<Grupo> grupos2 = grupoRepository.findByEstadoActivo(id);
+		
+		if(grupos2 != null) {
+			gruposDto = Mapper.Map(grupos2);
+		}
+		
+		return gruposDto;
 	}
 
 }
