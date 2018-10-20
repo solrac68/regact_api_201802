@@ -1,68 +1,53 @@
 package co.udea.regact.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
-import javax.inject.Inject;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 
-//import com.github.springtestdbunit.DbUnitTestExecutionListener;
-//import com.github.springtestdbunit.annotation.DatabaseOperation;
-//import com.github.springtestdbunit.annotation.DatabaseSetup;
-//import com.github.springtestdbunit.annotation.DatabaseTearDown;
 
 import co.udea.regact.api.domain.Curso;
-import co.udea.regact.api.exception.DataNotFoundException;
-import co.udea.regact.api.service.CursoService;
-
-
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = RegistroActividadesApiApplication.class)
-@ActiveProfiles(profiles = { "test" })
-//@DatabaseSetup(value = "/datasets/base-cursos.xml")
-//@DatabaseTearDown(value = "/datasets/base-cursos.xml", type = DatabaseOperation.DELETE)
-//@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
-//    TransactionalTestExecutionListener.class,
-//    DbUnitTestExecutionListener.class})
+import co.udea.regact.api.repository.CursoRepository;
+import co.udea.regact.api.service.impl.CursoServiceImp;
+import org.mockito.Mock;
+import org.junit.Before;
+import org.mockito.MockitoAnnotations;
 public class CursoServiceImpTest {
 	
-	@Inject
-	private CursoService cursoService;
+	private CursoServiceImp cursoServiceImp;
+	
+	@Mock
+	private CursoRepository cursoRepository;
+	
+	@Mock
+	private Curso cursoMock;
 	
 	@Before
-	public void init() {
-		
-	}
-	
-	@After
-	public void destroy() {
-		 
+    public void setupMock() {
+		MockitoAnnotations.initMocks(this);
+		cursoServiceImp = new CursoServiceImp(cursoRepository);
 	}
 
 	@Test
-	public void debeRetornoUnCursoPorSuCodigoExistosamente() {
-		Curso curso = cursoService.getCurso(1);
-		assertThat(curso).isNotNull();
-		assertThat(curso.getNombre()).isEqualTo("Matematicas");
-	}
-	
-	@Test
-	public void debeRetornErrorSiElCursoNoExiste() {
+	public void testGetCurso() throws Exception {
+			
+		when(cursoRepository.findOne(1)).thenReturn(cursoMock);
 		
-		assertThatThrownBy(() -> {
-			 cursoService.getCurso(3);
-		}).isInstanceOf(DataNotFoundException.class);
+		Curso curso = cursoServiceImp.getCurso(1);
+		
+		assertThat(curso, is(equalTo(cursoMock)));
 	}
 
-	
+	@Test
+	public void testSaveCurso()  throws Exception {
+		//cursoMock = new Curso();
+		when(cursoRepository.saveAndFlush(cursoMock)).thenReturn(cursoMock);
+		
+		Curso curso = cursoServiceImp.saveCurso(cursoMock);
+		
+		assertThat(curso, is(equalTo(cursoMock)));
+	}
+
 }
