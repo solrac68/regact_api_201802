@@ -45,6 +45,7 @@ public class Semestre {
 	@OneToMany(mappedBy = "semestre", cascade = CascadeType.ALL)
 	@JsonBackReference
 	private Set<Grupo> grupos;
+	
 
 	public Integer getId() {
 		return id;

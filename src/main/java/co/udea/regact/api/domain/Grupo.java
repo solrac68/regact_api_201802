@@ -2,6 +2,9 @@ package co.udea.regact.api.domain;
 
 
 import java.util.Date;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +12,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "GRUPOS")
@@ -61,6 +67,10 @@ public class Grupo {
 	@ManyToOne
 	@JoinColumn(name = "gru_doce_id")
 	private Docente docente;
+	
+	@OneToMany(mappedBy = "grupo", cascade = CascadeType.ALL)
+	@JsonBackReference
+	private Set<ReporteActividad> reporteActividades;
 
 	public Integer getId() {
 		return id;
@@ -156,6 +166,14 @@ public class Grupo {
 
 	public void setHorafinclase(Date horafinclase) {
 		this.horafinclase = horafinclase;
+	}
+
+	public Set<ReporteActividad> getReporteActividades() {
+		return reporteActividades;
+	}
+
+	public void setReporteActividades(Set<ReporteActividad> reporteActividades) {
+		this.reporteActividades = reporteActividades;
 	}
 
 

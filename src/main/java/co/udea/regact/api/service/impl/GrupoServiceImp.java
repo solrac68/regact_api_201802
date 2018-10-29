@@ -35,7 +35,7 @@ public class GrupoServiceImp implements GrupoService {
 		if(docente != null) {
 			List<Grupo> grupos = new ArrayList<Grupo>();
 			grupos.addAll(docente.getGrupos());
-			gruposDto = Mapper.Map(grupos);
+			gruposDto = Mapper.MapGrupos(grupos);
 		}
 		
 		return gruposDto;	
@@ -55,7 +55,7 @@ public class GrupoServiceImp implements GrupoService {
 		List<Grupo> grupos2 = grupoRepository.findByEstadoActivo(id);
 		
 		if(grupos2 != null) {
-			gruposDto = Mapper.Map(grupos2);
+			gruposDto = Mapper.MapGrupos(grupos2);
 		}
 		
 		return gruposDto;
