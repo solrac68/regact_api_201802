@@ -16,6 +16,7 @@ import co.udea.regact.api.dto.GrupoDto;
 import co.udea.regact.api.repository.DocenteRepository;
 import co.udea.regact.api.repository.GrupoRepository;
 import co.udea.regact.api.service.impl.GrupoServiceImp;
+import co.udea.regact.api.util.Messages;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +29,10 @@ public class GrupoServiceImpTest {
 	private GrupoRepository grupoRepository;
 	
 	@Mock
-	private DocenteRepository docenteRepository; 
+	private DocenteRepository docenteRepository;
+	
+	@Mock
+	private Messages messages;
 	
 	@Mock
 	private Grupo grupoMock;
@@ -47,7 +51,8 @@ public class GrupoServiceImpTest {
 		
 		gruposMock = Arrays.asList(grupo1Mock,grupo2Mock,grupo3Mock);
 		
-		grupoServiceImp = new GrupoServiceImp(docenteRepository,grupoRepository);
+		grupoServiceImp = new GrupoServiceImp(docenteRepository,grupoRepository,messages);
+		
 	}
 	
 	

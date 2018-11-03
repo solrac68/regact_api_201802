@@ -15,35 +15,36 @@ import co.udea.regact.api.dto.ReporteActividadDto;
 public class Mapper {
 	public static List<GrupoDto> MapGrupos(List<Grupo> grupos){
 		List<GrupoDto> gruposDto = new ArrayList<>();
-		GrupoDto grupoDto;
-		Semestre semestre;
-		Curso curso;
-		
 		for(Grupo grupo : grupos) {
-			semestre = grupo.getSemestre();
-			curso = grupo.getCurso();
-			grupoDto = new GrupoDto();
-			
-			grupoDto.setCorreoDocente(grupo.getDocente() != null ? grupo.getDocente().getEmail():"");
-			grupoDto.setSemestre(semestre != null ? semestre.getSemestre():false);
-			grupoDto.setEstadoSemestre(semestre != null ? semestre.getEstado():false);
-			grupoDto.setAnoSemestre(semestre != null ? semestre.getAno():0);
-			grupoDto.setNombreCurso(curso != null ? curso.getNombre():"");
-			grupoDto.setEstadoGrupo(grupo.getEstado());
-			grupoDto.setFechaFin(grupo.getFechaFin());
-			grupoDto.setFechaInicio(grupo.getFechaInicio());
-			grupoDto.setHorainiclase(grupo.getHorainiclase());
-			grupoDto.setHorafinclase(grupo.getHorafinclase());
-			grupoDto.setDiaclase(grupo.getDiaclase());
-			grupoDto.setCantidadestudiantes(grupo.getCantidadestudiantes());
-			grupoDto.setNombre(grupo.getNombre());
-			grupoDto.setId(grupo.getId());
-			grupoDto.setIdDocente(grupo.getDocente() != null ? grupo.getDocente().getId():0);
-			gruposDto.add(grupoDto);
-
+			gruposDto.add(MapGrupo(grupo));
 		}
 		
 		return gruposDto;
+	}
+	
+	public static GrupoDto MapGrupo(Grupo grupo) {
+		GrupoDto grupoDto = new GrupoDto();
+		Semestre semestre = grupo.getSemestre();
+		Curso curso = grupo.getCurso();
+		
+		grupoDto.setCorreoDocente(grupo.getDocente() != null ? grupo.getDocente().getEmail():"");
+		grupoDto.setSemestre(semestre != null ? semestre.getSemestre():false);
+		grupoDto.setEstadoSemestre(semestre != null ? semestre.getEstado():false);
+		grupoDto.setAnoSemestre(semestre != null ? semestre.getAno():0);
+		grupoDto.setNombreCurso(curso != null ? curso.getNombre():"");
+		grupoDto.setEstadoGrupo(grupo.getEstado());
+		grupoDto.setFechaFin(grupo.getFechaFin());
+		grupoDto.setFechaInicio(grupo.getFechaInicio());
+		grupoDto.setHorainiclase(grupo.getHorainiclase());
+		grupoDto.setHorafinclase(grupo.getHorafinclase());
+		grupoDto.setDiaclase(grupo.getDiaclase());
+		grupoDto.setCantidadestudiantes(grupo.getCantidadestudiantes());
+		grupoDto.setNombre(grupo.getNombre());
+		grupoDto.setId(grupo.getId());
+		grupoDto.setIdDocente(grupo.getDocente() != null ? grupo.getDocente().getId():0);
+		
+		return grupoDto;
+		
 	}
 	
 	public static List<ReporteActividadDto> MapReporteActividades(List<ReporteActividad> actividades){

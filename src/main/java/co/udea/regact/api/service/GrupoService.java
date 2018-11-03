@@ -8,4 +8,6 @@ public interface GrupoService {
 	public List<GrupoDto> getGruposByDocente(Integer id);
 	public Grupo saveGrupo(Grupo grupo);
 	public List<GrupoDto> getGruposActivosByDocente(Integer id);
+	public GrupoDto getGrupoById(Integer id);
+	
 }

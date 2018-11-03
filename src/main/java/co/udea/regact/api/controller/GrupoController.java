@@ -38,6 +38,12 @@ public class GrupoController {
 		return grupoService.getGruposActivosByDocente(id);
 	}
 	
+	@GetMapping("get/{id}")
+	public GrupoDto getGrupoById(@PathVariable(value = "id") Integer id){
+		log.debug("Entro a consultar el grupo: "+ id);
+		return grupoService.getGrupoById(id);
+	}
+	
 	
 
 }

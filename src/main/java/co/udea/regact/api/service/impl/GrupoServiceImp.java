@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 import co.udea.regact.api.domain.Docente;
 import co.udea.regact.api.domain.Grupo;
 import co.udea.regact.api.dto.GrupoDto;
+import co.udea.regact.api.exception.DataNotFoundException;
 import co.udea.regact.api.repository.DocenteRepository;
 import co.udea.regact.api.repository.GrupoRepository;
+import co.udea.regact.api.repository.ReporteActividadRepository;
 import co.udea.regact.api.service.GrupoService;
 import co.udea.regact.api.util.Mapper;
+import co.udea.regact.api.util.Messages;
 
 @Service
 @Qualifier("GrupoServiceImpl")
@@ -19,11 +22,19 @@ public class GrupoServiceImp implements GrupoService {
 	
 	private DocenteRepository docenteRepository;
 	private GrupoRepository grupoRepository;
+	//private ReporteActividadRepository reporteActividadRepository;
+	private Messages messages;
 	
 	
-	public GrupoServiceImp(DocenteRepository docenteRepository,GrupoRepository grupoRepository) {
+	public GrupoServiceImp(
+			DocenteRepository docenteRepository,
+			GrupoRepository grupoRepository,
+			//ReporteActividadRepository reporteActividadRepository,
+			Messages messages) {
 		this.docenteRepository = docenteRepository;
 		this.grupoRepository = grupoRepository;
+		this.messages = messages;
+		//this.reporteActividadRepository = reporteActividadRepository;
 	}
 
 	@Override
@@ -59,6 +70,17 @@ public class GrupoServiceImp implements GrupoService {
 		}
 		
 		return gruposDto;
+	}
+
+	@Override
+	public GrupoDto getGrupoById(Integer id) {
+		GrupoDto grupoDto = null;
+		
+		Grupo grupo = grupoRepository.findById(id)
+				.orElseThrow(() -> new DataNotFoundException(messages.get("exception.data_not_found.Grupo")));
+		grupoDto = Mapper.MapGrupo(grupo);
+		
+		return grupoDto;
 	}
 
 }
