@@ -9,6 +9,7 @@ import co.udea.regact.api.domain.Curso;
 import co.udea.regact.api.domain.Grupo;
 import co.udea.regact.api.domain.ReporteActividad;
 import co.udea.regact.api.domain.Semestre;
+import co.udea.regact.api.dto.ActividadDTO;
 import co.udea.regact.api.dto.GrupoDto;
 import co.udea.regact.api.dto.ReporteActividadDto;
 
@@ -74,5 +75,30 @@ public class Mapper {
 		
 		return reporteActividadDto;	
 	}
+	
+	public static ActividadDTO MapActividad(Actividad actividad) {
+		ActividadDTO actividadDTO = new ActividadDTO();
+		
+		if(actividad != null) {
+			actividadDTO.setId(actividad.getId());
+			actividadDTO.setDescripcion(actividad.getDescripcion());
+		}
+		
+		return actividadDTO;
+		
+	}
+	
+	public static List<ActividadDTO> MapActividades(List<Actividad> actividades){
+		List<ActividadDTO> actividadesDTO = new ArrayList<>();
+		
+		for (Actividad act : actividades) {		
+			actividadesDTO.add(MapActividad(act));
+		}
+		
+		return actividadesDTO;
+		
+	}
+	
+	
 	
 }
